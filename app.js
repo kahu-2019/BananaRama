@@ -1,8 +1,11 @@
 var createError = require('http-errors');
 var express = require('express');
+const router = express.Router()
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const fs = require('fs')
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/addNew');
@@ -49,8 +52,6 @@ app.get('/ping', function(req, res) {
 app.post('/addNew', function(req, res) {
   let sampleFile;
   let uploadPath;
-  let id = req.params.id;
-  let banInfo = req.body;
 
   if (Object.keys(req.files).length == 0) {
     res.status(400).send('No files were uploaded.');
@@ -69,35 +70,36 @@ app.post('/addNew', function(req, res) {
     }
 
         return res.send('File uploaded!' + uploadPath);
-
-        // fs.readFile('./data.json', 'utf8', (err, data) => {
-        //   if (err) {
-        //     res.send('No puppies???')
-        //     return
-        //   }
-      
-        //   let pupStuff = JSON.parse(data)
-      
-        //   let pup = pupStuff.puppies.find((aPup) => aPup.id == id)
-      
-      
-        //   pup.name = pupInfo.name
-        //   pup.breed = pupInfo.breed
-        //   pup.owner = pupInfo.owner
-      
-        //   if (pupInfo.imageID != undefined) {
-        //     puppy.image = "/images/puppy" + pupInfo.imageID + ".jpg"
-        //   }
-        //   fs.writeFile('./data.json', JSON.stringify(pupStuff), (err) => {
-        //     if (err) {
-        //       res.send('Something under the hood has broken :(')
-        //       return
-        //     }
-        //     res.redirect("/puppies/" + id)
-        //   })
-      
-        // })
   });
 });
+
+router.post('/addNew', (req, res) => {
+  let banInfo = req.body
+
+  fs.readFile('./data.json', 'utf8', (err, data) => {
+    if (err) {
+      res.send('No puppies???')
+      return
+    }
+
+    let banStuff = JSON.parse(data)
+
+    bananas.name = banInfo.name
+    bananas.origin = banInfo.origin
+
+    if (banInfo.imageID != undefined) {
+      puppy.image = "/images/puppy" + banInfo.imageID + ".jpg"
+    }
+    fs.appendFile('./data.json', JSON.stringify(banStuff), (err) => {
+      if (err) {
+        res.send('Something under the hood has broken :(')
+        return
+      }
+      res.send("New profile created")
+    })
+
+  })
+
+})
 
 module.exports = app;
