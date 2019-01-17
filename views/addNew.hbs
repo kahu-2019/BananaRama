@@ -1,0 +1,20 @@
+	<form ref='uploadForm' 
+			id='uploadForm' 
+			action='/addNew' 
+			method='post' 
+			encType="multipart/form-data">
+      <img class="img-circle" src="{{image}}" alt="{{name}}">
+  <label for="name" class="form-item">
+    Name:
+    <input type="text" name="name" value="{{name}}">
+  </label>
+  
+  <label for="origin" class="form-item">
+    origin:
+    <input type="text" name="origin" value="{{origin}}">
+  </label>
+
+
+				<input type="file" name="sampleFile" />
+				<input type='submit' value='Upload!' />
+	</form>	
