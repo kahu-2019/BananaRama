@@ -6,14 +6,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const fs = require('fs')
 
+var hbs = require('hbs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/addNew');
+// Handlebars.registerPartial('header', '{{name}}')
 
 var app = express();
 const fileUpload = require('express-fileupload');
 
 // view engine setup
+hbs.registerPartials(__dirname + '/views/partial');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

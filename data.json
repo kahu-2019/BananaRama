@@ -4,43 +4,43 @@
       "id": 1,
       "name": "na-na",
       "origin": "Fred",
-      "image": "/public/images/?.jpg"
+      "image": "/public/images/banana1.jpg"
     },
     {
       "id": 2,
       "name": "Coco",
       "origin": "Chloe",
-      "image": "/public/images/?.jpg"
+      "image": "/public/images/banana2.jpg"
     },
     {
       "id": 3,
       "name": "Magnum",
       "origin": "Michael",
-      "image": "/public/images/?.jpg"
+      "image": "/public/images/banana3.jpg"
     },
     {
       "id": 4,
       "name": "Sadie",
       "origin": "Sam",
-      "image": "/public/images/?.jpg"
+      "image": "/public/images/banana4.jpg"
     },
     {
       "id": 5,
       "name": "Murphy",
       "origin": "Matthew",
-      "image": "/public/images/?.jpg"
+      "image": "/public/images/banana5.jpg"
     },
     {
       "id": 6,
       "name": "Bella",
       "origin": "Brianna",
-      "image": "/public/images/?.jpg"
+      "image": "/public/images/banana6.jpg"
     },
     {
       "id": 7,
       "name": "Rocky",
       "origin": "Ricky",
-      "image": "/public/images/?.jpg"
+      "image": "/public/images/banana7.jpg"
     }
   ]
 }
