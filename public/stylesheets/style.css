@@ -1,9 +1,69 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #00B7FF;
+  
+  background-color: yellow;
+  width:1800px;
+
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(0, 0, 0);
+}
+
+header {
+color:black;
+background-color: yellow;
+position:fixed;
+width:1800px;
+top:0;
+} 
+
+footer {
+  position:fixed;
+  bottom:0;
+  background-color: yellow;
+  padding-left: 0px;
+  width:1800px;
+  
+}
+
+hr {
+color:black;
+}
+
+
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: yellow;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+} */
+
+/* Add a color to the active/current link */
+/* .topnav a.active {
+background-color: yellow;
+color:black;
+} */
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+float: right;
 }
