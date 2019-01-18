@@ -2,45 +2,45 @@
   "bananas": [
     {
       "id": 1,
-      "name": "na-na",
-      "origin": "Fred",
-      "image": "/public/images/banana1.jpg"
+      "name": "Nice Banana",
+      "origin": "Mac",
+      "image": "/images/banana1.jpg"
     },
     {
       "id": 2,
-      "name": "Coco",
-      "origin": "Chloe",
-      "image": "/public/images/banana2.jpg"
+      "name": "Yuck Banana",
+      "origin": "brett",
+      "image": "/images/banana2.jpg"
     },
     {
       "id": 3,
-      "name": "Magnum",
-      "origin": "Michael",
-      "image": "/public/images/banana3.jpg"
+      "name": "Steve",
+      "origin": "Steve",
+      "image": "/images/banana3.jpg"
     },
     {
       "id": 4,
-      "name": "Sadie",
-      "origin": "Sam",
-      "image": "/public/images/banana4.jpg"
+      "name": "Fake banana",
+      "origin": "Nina",
+      "image": "/images/banana4.jpg"
     },
     {
       "id": 5,
-      "name": "Murphy",
-      "origin": "Matthew",
-      "image": "/public/images/banana5.jpg"
+      "name": "Vintage Banana",
+      "origin": "Peter",
+      "image": "/images/banana5.jpg"
     },
     {
       "id": 6,
-      "name": "Bella",
+      "name": "BLING banana",
       "origin": "Brianna",
-      "image": "/public/images/banana6.jpg"
+      "image": "/images/banana6.jpg"
     },
     {
       "id": 7,
-      "name": "Rocky",
+      "name": "Stolen Banana",
       "origin": "Ricky",
-      "image": "/public/images/banana7.jpg"
+      "image": "/images/banana7.jpg"
     }
   ]
 }

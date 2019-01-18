@@ -11,7 +11,21 @@
 	 <br>
 
 
-<p>Our varieties</p>
+<h1>Our varieties</h1>
+<br>
+{{#each bananas.bananas}}
+<div class = "results">
+	<p class = "bananaTitle">{{name}}</p>
+<img class = "images" src="{{image}}">
+<p>
+Uploaded by: {{origin}}
+</p>
+
+</div>
+<br>
+<br>
+<br>
+{{/each}}
 
    <br>
 	 <br>

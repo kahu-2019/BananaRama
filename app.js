@@ -1,12 +1,10 @@
 var createError = require('http-errors');
 var express = require('express');
-const router = express.Router()
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const fs = require('fs')
-
 var hbs = require('hbs');
+var fs = require('fs')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/addNew');
@@ -53,9 +51,31 @@ app.get('/ping', function(req, res) {
   res.send('pong');
 });
 
+
+app.get('/index', function (req, res) {
+  fs.readFile('./data.json', 'utf8', function (err, data) {
+    if (err) {
+      return res.status(500).send('An Error Occured!')
+    }
+    var bananas = {
+      bananas: JSON.parse(data)
+    }
+    res.render('index', bananas)
+  })
+})
+
+app.get('/', function (req, res) {
+  res.redirect('/index')
+})
+
+
+
+
 app.post('/addNew', function(req, res) {
   let sampleFile;
   let uploadPath;
+  let id = req.params.id;
+  let banInfo = req.body;
 
   if (Object.keys(req.files).length == 0) {
     res.status(400).send('No files were uploaded.');
@@ -74,36 +94,10 @@ app.post('/addNew', function(req, res) {
     }
 
         return res.send('File uploaded!' + uploadPath);
+
+        
+        
   });
 });
-
-router.post('/addNew', (req, res) => {
-  let banInfo = req.body
-
-  fs.readFile('./data.json', 'utf8', (err, data) => {
-    if (err) {
-      res.send('No puppies???')
-      return
-    }
-
-    let banStuff = JSON.parse(data)
-
-    bananas.name = banInfo.name
-    bananas.origin = banInfo.origin
-
-    if (banInfo.imageID != undefined) {
-      puppy.image = "/images/puppy" + banInfo.imageID + ".jpg"
-    }
-    fs.appendFile('./data.json', JSON.stringify(banStuff), (err) => {
-      if (err) {
-        res.send('Something under the hood has broken :(')
-        return
-      }
-      res.send("New profile created")
-    })
-
-  })
-
-})
 
 module.exports = app;

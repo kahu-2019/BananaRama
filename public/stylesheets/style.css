@@ -71,3 +71,14 @@ float: right;
 p {
   background-color:yellow;
 }
+
+.bananaTitle {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.images {
+  height: 200px;
+  border-radius:20%;
+  
+}
