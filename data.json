@@ -41,6 +41,12 @@
       "name": "Rocky",
       "origin": "Ricky",
       "image": "/public/images/banana7.jpg"
+    },
+    {
+      "name": "xx",
+      "origin": "xx",
+      "id": 8,
+      "image": "/images/1595595a1dae402e73f7a7e7a3c32b51"
     }
   ]
 }
