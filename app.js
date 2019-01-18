@@ -47,37 +47,37 @@ app.use(function(err, req, res, next) {
 });
 
 // default file upload options
-app.use(fileUpload());
+// app.use(fileUpload());
 
-app.get('/ping', function(req, res) {
-  res.send('pong');
-});
+// app.get('/ping', function(req, res) {
+//   res.send('pong');
+// });
 
-app.post('/addNew', function(req, res) {
-  let sampleFile;
-  let uploadPath;
+// app.post('/addNew', function(req, res) {
+//   let sampleFile;
+//   let uploadPath;
 
-  if (Object.keys(req.files).length == 0) {
-    res.status(400).send('No files were uploaded.');
-    return;
-  }
+//   if (Object.keys(req.files).length == 0) {
+//     res.status(400).send('No files were uploaded.');
+//     return;
+//   }
 
-  console.log('req.files >>>', req.files);
+//   console.log('req.files >>>', req.files);
 
-  sampleFile = req.files.sampleFile;
+//   sampleFile = req.files.sampleFile;
 
-  uploadPath = __dirname + '/public/images/' + sampleFile.name;
+//   uploadPath = __dirname + '/public/images/' + sampleFile.name;
 
-  sampleFile.mv(uploadPath, function(err) {
-    if (err) {
-      return res.status(500).send(err);
-    }
+//   sampleFile.mv(uploadPath, function(err) {
+//     if (err) {
+//       return res.status(500).send(err);
+//     }
 
-        return res.send('File uploaded!' + uploadPath);
-  });
-});
+//         return res.send('File uploaded!' + uploadPath);
+//   });
+// });
 
-router.post('/addNew', (req, res) => {
+router.post('/addNew/', (req, res) => {
   let banInfo = req.body
 
   fs.readFile('./data.json', 'utf8', (err, data) => {
@@ -87,6 +87,7 @@ router.post('/addNew', (req, res) => {
     }
 
     let banStuff = JSON.parse(data)
+    console.log(banStuff)
 
     bananas.name = banInfo.name
     bananas.origin = banInfo.origin
